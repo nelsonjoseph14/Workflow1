@@ -1,0 +1,32 @@
+name: Challenge1
+on: push
+
+jobs:
+    job1:
+        name: job1
+        runs-on: ubuntu-latest
+        steps:
+        - name: Print Date
+          run: date
+
+        - name: Print working directory
+          run: pwd
+
+        - name: List directory contents
+          run: ls -la
+
+    job2:
+        name: job2
+        runs-on: ubuntu-latest
+        steps:
+        - name: Install Python
+          uses: actions/setup-python@v4
+          with:
+            python-version: 3.10
+
+        - name: Install pandas
+          run: pip install pandas
+
+        - name: Create artifact
+          run: python artifact.py
+        
