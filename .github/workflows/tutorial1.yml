@@ -6,11 +6,13 @@ jobs:
         name: job1
         runs-on: ubuntu-latest
         steps:
-        - name: setup python
+        - name: Setup Python
           uses: actions/setup-python@v4
           with:
             python-version: 3.9
-        - name: check version of python
+        - name: Check pip version
+          run: pip --version
+        - name: Check Version of Python
           run: python --version
 
     job2:
